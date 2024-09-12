@@ -44,6 +44,28 @@ This project contains a swagger, after starting the project you can see the swag
 http://localhost:8080/swagger-ui/index.html#
 ```
 
+## Hexagonal Architecture
+In this Spring Boot project, i've organized the main packages according to the hexagonal architecture principles, separating them into three key areas:
+
+**Application**: This package contains the application's service layer and application-specific logic. It includes components such as controllers, services, and mappers that interact with the core business logic and handle the application's primary use cases.
+
+**Domain**: This package encapsulates the core business logic and domain entities. It includes domain models, repositories (interfaces), and business rules that form the heart of the application.
+
+**Infra**: This package handles the infrastructure concerns, including implementations of the repository interfaces, configuration classes, and any external integrations or data sources. It provides the necessary support for the application and domain layers to interact with the real world.
+
+## RESTful
+Additionally, I’ve followed RESTful principles to ensure a well-structured and efficient API. This includes:
+
+Resource-Based URLs: I designed the endpoints to represent resources and their hierarchies. For example, /api/v1/products for managing products and /api/v1/carts/{cartId} for managing carts.
+
+HTTP Methods: Standard HTTP methods are used to perform operations on resources:
+
+GET to retrieve resources
+POST to create new resources
+PUT or PATCH to update existing resources
+DELETE to remove resources
+Stateless Communication: Each request from a client to the server contains all the information needed to understand and process it, with no server-side session state.
+
 ## Diagram
 
 ![diagram.png](diagram.png)
